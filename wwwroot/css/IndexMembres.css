@@ -1,0 +1,36 @@
+﻿body {
+    background-color: black;
+    background-image: url(../images/2.jpg);
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white !important;
+}
+
+
+.divlist {
+    background-color: black;
+}
+
+th, h1 {
+    color: white;
+}
+
+td {
+    color: white;
+}
+
+#ajouterbtn {
+    color: black;
+    background-color: orange !important;
+}
+
+#ajoutermembre {
+    background-color: orange !important;
+}
+#titre1 {
+    background-color: black !important;
+}

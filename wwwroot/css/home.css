@@ -1,0 +1,59 @@
+﻿body {
+    background-color: black;
+    background-image: url(../images/3.jpg);
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.justifier {
+    text-align: justify; 
+    text-justify: inter-word;
+    color: white;
+}
+
+h2 {
+    color: white;
+}
+
+
+.paragraph {
+    background-color: black;
+    opacity: 0.8;
+}
+
+.grandTitre {
+    opacity: 0.8;
+    background-color: chartreuse !important;
+    color: black;
+    margin: 5%;
+}
+
+.contact {
+    opacity: 0.9;
+    background-color: orange;
+    color: black;
+    padding: 30px;
+    height: auto;
+    width: 80%;
+    border: 1px solid;
+}
+
+#nousjoindre {
+    color: black;
+    background-color: red;
+}
+
+.propos {
+    opacity: 0.9;
+    background-color: orange;
+    color: black;
+    padding: 20px;
+    height: auto;
+    width: 100%;
+    border: 1px solid;
+    margin: 5%;
+}

@@ -1,0 +1,29 @@
+﻿body {
+    background-color: black;
+    background-image: url(../images/5.jpg);
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+.fromcreate {
+    opacity: 0.9;
+    background-color: chartreuse;
+    color: white;
+    padding: 20px;
+    height: auto;
+    width: 70%;
+    border: 1px solid;
+    margin: 20px;
+}
+
+#retourliste {
+    color: black;
+}
+
+i {
+    cursor: pointer;
+}

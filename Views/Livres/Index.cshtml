@@ -1,0 +1,88 @@
+﻿@model IEnumerable<Database_First.Models.Livre>
+
+<link rel="stylesheet" href="~/css/IndexLivres.css" />
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+ 
+
+<div class="divlistlivres">
+
+    <a href='@Url.Action("Index", "Livres")'>
+        <h1>Livres</h1>
+    </a>
+    &nbsp; &nbsp;
+    <form asp-action="Afficherlivres" class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Recherche par titre" aria-label="Search" name="trouverlivre">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Chercher</button>
+    </form>
+    <br />
+
+
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.IdL)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Titre)
+                </th>
+                <!--<th>
+                    @Html.DisplayNameFor(model => model.Auteur)
+                </th>
+                <th>-->
+                @*@Html.DisplayNameFor(model => model.Categories)*@
+                <!--Catégorie
+
+                </th>-->
+                <th>
+                    @*@Html.DisplayNameFor(model => model.NbExemlpaire)*@
+                    Nombre d'exemplaires
+                </th>
+                <th>
+                    @*@Html.DisplayNameFor(model => model.NbExemlpaireTotal)*@
+                    Nombre Total d'exemplaires
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdL)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Titre)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.Auteur)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Categories)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NbExemlpaire)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NbExemlpaireTotal)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.IdL"><i class="fas fa-edit"></i> </a>&nbsp;&nbsp;
+                        <a asp-action="Details" asp-route-id="@item.IdL"><i class="fas fa-info"></i></a>&nbsp;&nbsp;
+                        <a asp-action="Delete" asp-route-id="@item.IdL"><i class="fas fa-trash-alt"></i> </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+<button type="button" class="btn btn-success">
+    <h4> <a asp-action="Create">Ajouter un Livre</a>     </h4>
+</button>

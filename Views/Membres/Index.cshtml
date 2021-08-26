@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Database_First.Models.Membre>
+
+<link rel="stylesheet" href="~/css/IndexMembres.css" />
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div id="titre1">
+    <a href='@Url.Action("Index", "Membres")'>
+        <h1 > Membres</h1>
+    </a>
+</div>
+
+<div class="divlist"> 
+    
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.IdM)
+                </th>
+                <th> 
+                    @Html.DisplayNameFor(model => model.Nom)
+                </th>
+                <th>
+                    @*@Html.DisplayNameFor(model => model.Prenom)*@
+                    Prénom
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Courriel)
+                </th>
+                <!--<th>-->
+                @*@Html.DisplayNameFor(model => model.MotPasse)*@
+                <!--Mot de passe
+    </th>-->
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Prenom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Courriel)
+                </td>
+                @*<td>
+            @Html.DisplayFor(modelItem => item.MotPasse)
+        </td>*@
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdM"><i class="fas fa-edit"></i> </a>&nbsp;&nbsp;
+                    <a asp-action="Details" asp-route-id="@item.IdM"><i class="fas fa-info"></i></a>&nbsp;&nbsp;
+                    <a asp-action="Delete" asp-route-id="@item.IdM"><i class="fas fa-trash-alt"></i> </a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+<button type="button" class="btn btn-success">
+    <h4> <a asp-action="Create">Ajouter un Membre</a>     </h4>
+</button>

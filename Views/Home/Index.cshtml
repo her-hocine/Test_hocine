@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<link rel="stylesheet" href="~/css/home.css" />
+
+
+<div class="jumbotron grandTitre">
+    <h1>GPLCC</h1>
+    <p class="lead">
+        <strong>
+
+            La bibliothèque GPLCC offre des collections variées de documents,
+            des instruments de musique,
+            des postes informatiques et de nombreuses activités pour tous les goûts et tous les âges. <br /> <br />
+
+            <a href='@Url.Action("Contact", "Home")'>
+                <img src='@Url.Content("~/images/6.png")' width="220" height="100" />
+            </a>
+        </strong>
+    </p>
+
+
+
+</div>
+
+<div class="row paragraph">
+    <div class="col-md-6 ">
+        <h2>S’inscrire en bibliothèque de prêt</h2>
+        <p class="justifier">
+            Une seule inscription permet d’emprunter dans toutes les bibliothèques de prêt de notre  centres communautaires.
+            L’emprunt des imprimés (livres, revues, BD, partitions), des textes lus sur CD, des méthodes de langue,
+            le prêt de liseuse, l’accès internet & les offres de services multimédia sont gratuits. L’emprunt des CD et DVD se
+            fait sur abonnement payant (voir tarifs et cas particuliers plus bas).
+            L'inscription est ouverte à tous, adultes ou enfants.
+
+        </p>
+
+    </div>
+    @*<div class="col-md-4 ">
+            <h2>Où peut-on s'inscrire ?</h2>
+            <p class="justifier">
+                Dans toutes les bibliothèques du réseau, vous trouverez un ou plusieurs postes d’inscription et du personnel pour vous accueillir. <br />
+                <strong> Avec quelles pièces justificatives ?</strong> <br />
+                Une pièce d’identité en cours de validité suffit.
+            </p>
+
+
+
+        </div>*@
+    <div class="col-md-6 ">
+        <h2>Que peut-on emprunter ?</h2>
+        <p class="justifier">
+
+            Une inscription permet d’emprunter dans toutes les bibliothèques de prêt de la ville de Paris dans une collection riche de plus de 3,5 millions de documents (livres, CD, DVD…).
+            Prêts 3 semaines : 20 documents quel que soit le support (livres, revues, BD, partitions, méthodes de langue, CD) dont 5 DVD (40 documents maximum). Les CD musicaux et les DVD ne sont prêtés que sur abonnement en cours de validité. Voir cas particulier ; mineurs et minima sociaux
+            Prêts 1 semaine (nouveautés) : le prêt est limité à 3 imprimés et 3 CD
+
+        </p>
+
+    </div>
+</div>
+
+

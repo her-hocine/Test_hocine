@@ -1,0 +1,51 @@
+﻿@model Database_First.Models.Emprunter
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Détails</h1>
+
+<div>
+    <h4>Emprunter</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.DateEmp)*@
+            Date de prêt
+
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DateEmp)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.DateRetour)*@
+           Date de retour 
+
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DateRetour)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.IdLNavigation)*@
+            Id-Livre
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdLNavigation.IdL)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.IdMNavigation)*@
+            Id-Membre
+
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdMNavigation.IdM)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index"><i class="fas fa-arrow-alt-circle-left"></i></a>&nbsp;&nbsp;
+
+    <a asp-action="Edit" asp-route-id="@Model.IdE"> <i class="fas fa-edit"></i></a> |
+ 
+</div>

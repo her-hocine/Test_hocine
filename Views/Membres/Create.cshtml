@@ -1,0 +1,60 @@
+﻿@model Database_First.Models.Membre
+
+<link rel="stylesheet" href="~/css/CMembres.css" />
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="form-horizontal fromcreate">
+
+    <h1>Membre</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-8">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Nom" class="control-label"></label>
+                    <input asp-for="Nom" class="form-control" />
+                    <span asp-validation-for="Nom" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Prénom</label>
+                    <input asp-for="Prenom" class="form-control" />
+                    <span asp-validation-for="Prenom" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Courriel" class="control-label"></label>
+                    <input asp-for="Courriel" class="form-control" />
+                    <span asp-validation-for="Courriel" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label"> Mot de Passe</label>
+                    <input asp-for="MotPasse" class="form-control" />
+                    <span asp-validation-for="MotPasse" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Envoyer" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<span>
+    @*<i class="fas fa-arrow-circle-left fa-4x" onclick="location.href='@Url.Action("Index", "Membres")'">*@
+    <a asp-action="Index">
+        <i class="fas fa-arrow-circle-left fa-4x"> </i>
+
+    </a>
+    @*</i>*@
+</span>
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

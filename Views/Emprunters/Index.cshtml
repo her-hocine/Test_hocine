@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Database_First.Models.Emprunter>
+    <link rel="stylesheet" href="~/css/IndexEmprunter.css" />
+
+    @{
+        ViewData["Title"] = "Index";
+    }
+<div  > 
+    <h1 id="titre1">Les prêts</h1>
+</div>
+<div class="divlistprets">
+
+
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>
+                    @*@Html.DisplayNameFor(model => model.DateEmp)*@
+                    Date de prêt
+                </th>
+                <th>
+                    @*@Html.DisplayNameFor(model => model.DateRetour)*@
+                    Date de retour
+                </th>
+                <th>
+                    @*@Html.DisplayNameFor(model => model.IdLNavigation)*@
+                    Id-Livre
+                </th>
+                <th>
+                    @*@Html.DisplayNameFor(model => model.IdMNavigation)*@
+                    Id-Membre
+                </th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateEmp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateRetour)
+                </td>
+                <td>
+                    <a asp-controller="Livres"
+                       asp-action="Details" asp-route-id="@item.IdLNavigation.IdL" >    @Html.DisplayFor(modelItem => item.IdLNavigation.IdL) </a>
+                </td>
+                <td>
+                    <a asp-controller="Membres"
+                       asp-action="Details" asp-route-id="@item.IdMNavigation.IdM" > @Html.DisplayFor(modelItem => item.IdMNavigation.IdM)  </a>
+                </td>
+                <td>
+                    <a asp-action="EffectuerRetour" asp-route-id="@item.IdE">Retour <i class="fas fa-book"></i></a>&nbsp;&nbsp;
+
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdE"><i class="fas fa-edit"></i> </a>&nbsp;&nbsp;
+                    <a asp-action="Details" asp-route-id="@item.IdE"><i class="fas fa-info"></i></a>&nbsp;&nbsp;
+                    <a asp-action="Delete" asp-route-id="@item.IdE"><i class="fas fa-trash-alt"></i> </a>
+
+                </td>
+
+
+            </tr>
+            }
+        </tbody> 
+    </table>
+</div> 
+    <button type="button" class="btn btn-success">
+        <h4> <a asp-action="Create">Ajouter un prêt</a>     </h4>
+    </button>

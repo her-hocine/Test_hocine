@@ -1,0 +1,62 @@
+﻿@model Database_First.Models.Livre
+<link rel="stylesheet" href="~/css/Clivres.css">
+
+@{
+    ViewData["Title"] = "Modifier";
+}
+<div class="form-horizontal fromcreate">
+
+    <h3>
+        Modifier les informations relatives au livre N° @Html.DisplayFor(model => model.IdL)
+    </h3>
+
+    <hr />
+    <div class="row">
+        <div class="col-md-8">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="IdL" />
+                <div class="form-group">
+                    <label asp-for="Titre" class="control-label"></label>
+                    <input asp-for="Titre" class="form-control" />
+                    <span asp-validation-for="Titre" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Auteur" class="control-label"></label>
+                    <input asp-for="Auteur" class="form-control" />
+                    <span asp-validation-for="Auteur" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">
+                        Catégorie
+                    </label>
+                    <input asp-for="Categories" class="form-control" />
+                    <span asp-validation-for="Categories" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">   Nombre d'exemplaires</label>
+                    <input asp-for="NbExemlpaire" class="form-control" />
+                    <span asp-validation-for="NbExemlpaire" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label"> Nombre Total d'exemplaires</label>
+                    <input asp-for="NbExemlpaireTotal" class="form-control" />
+                    <span asp-validation-for="NbExemlpaireTotal" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Sauvegarder" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<span>
+    <a asp-action="Index">
+        <i class="fas fa-arrow-circle-left fa-4x"> </i>
+
+    </a>
+</span>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

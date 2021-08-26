@@ -1,0 +1,51 @@
+﻿@model Database_First.Models.Emprunter
+<link rel="stylesheet" href="~/css/CEmprunter.css">
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<div class="form-horizontal fromcreate">
+
+    <h1>Emprunter un livre</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-8">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="IdM" class="control-label"></label>
+                    <select asp-for="IdM" class="form-control" asp-items="ViewBag.IdM"></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="IdL" class="control-label"></label>
+                    <select asp-for="IdL" class="form-control" asp-items="ViewBag.IdL"></select>
+                </div>
+                @*<div class="form-group">
+                    <label asp-for="DateEmp" class="control-label"></label>
+                    <input asp-for="DateEmp" class="form-control" />
+                    <span asp-validation-for="DateEmp" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DateRetour" class="control-label"></label>
+                    <input asp-for="DateRetour" class="form-control" />
+                    <span asp-validation-for="DateRetour" class="text-danger"></span>
+                </div>*@
+                <div class="form-group">
+                    <input type="submit" value="Envoyer" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<span>
+    <a asp-action="Index">
+        <i class="fas fa-arrow-circle-left fa-4x"> </i>
+
+    </a>
+</span>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
