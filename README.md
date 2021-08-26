@@ -2,7 +2,7 @@
 
 Gestion de prêt de livres pour un centre communautaire(GPLCC)
 
-un application web pour gérer le prêt de livres à ses membres. Le prêt est gratuit et de durée une semaine. Lors d’un prêt, 
+une application web pour gérer le prêt de livres à ses membres. Le prêt est gratuit et de durée une semaine. Lors d’un prêt, 
 le nombre de livres maximal est de trois. La date de prêt est consignée et la date de retour aussi.
  
 
